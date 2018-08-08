@@ -37,6 +37,23 @@ public class SortingMethod {
 		
 	}
 
+	public String[] InsertionSort(String[] input) {
+		result = Arrays.copyOf(input, input.length);
+		if(result.length>1){
+			for(int i =1;i<result.length; i++){
+				for(int q = i;q>0;q--){
+					Comparator c = new Comparator(result[q],result[q-1]);
+					if(c.isLessThan()){
+						swap(q,q-1);
+					}
+					else
+						break;
+				}
+			}
+		}
+		return result;
+	}
+	
 	public void swap(int pointer,int target) {
 		String data = result[target];
 		result[target] = result[pointer];
