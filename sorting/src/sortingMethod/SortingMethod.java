@@ -13,15 +13,33 @@ public class SortingMethod {
 			for (int q = 0; q < i; q++) {
 				Comparator c = new Comparator(result[q], result[q + 1]);
 				if (c.isGreaterThan())
-					swap(q);
+					swap(q,q+1);
 			}
 		}
 		return result;
 	}
+	
+	public String[] SelectionSort(String[] input) {
+		result = Arrays.copyOf(input, input.length);
+		int min;
+		if(result!= null){
+			for(int loc = 0;loc < result.length-1 ;loc++){
+				min  = loc;
+			for(int i=loc+1;i<result.length;i++){
+				Comparator c = new Comparator(result[min], result[i]);
+				if (c.isGreaterThan())
+					min =i;
+			}
+			swap(loc, min);
+			}
+		}
+		return result;
+		
+	}
 
-	public void swap(int pointer) {
-		String data = result[pointer + 1];
-		result[pointer + 1] = result[pointer];
+	public void swap(int pointer,int target) {
+		String data = result[target];
+		result[target] = result[pointer];
 		result[pointer] = data;
 	}
 }
