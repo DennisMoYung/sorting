@@ -1,11 +1,11 @@
 package comparator;
 
 public class Comparator {
-	String str1, str2;
+	private String str1, str2;
 
-	public Comparator(Object item1, Object item2) {
-		str1 = (String) item1;
-		str2 = (String) item2;
+	public Comparator(String item1, String item2) {
+		str1 = item1;
+		str2 = item2;
 	}
 
 	public boolean isGreaterThan() {
@@ -19,11 +19,11 @@ public class Comparator {
 	public boolean isLessThan() {
 		return str1.compareTo(str2) < 0;
 	}
-	
+
 	public boolean isGreaterOrEqualTo() {
 		return str1.compareTo(str2) >= 0;
 	}
-	
+
 	public boolean isLessOrEqualTo() {
 		return str1.compareTo(str2) <= 0;
 	}

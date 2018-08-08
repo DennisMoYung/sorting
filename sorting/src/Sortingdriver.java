@@ -3,14 +3,16 @@ import sortingMethod.*;
 public class Sortingdriver {
 
 	public static void main(String[] args) {
-		
-	String[] input = { "123", "abc", "abc", "sdf", "adasd", "bdfsd" , "z"};
-	SortingMethod s = new SortingMethod(input);
-	//s.BubbleSort();
-		
+
+		String[] input = { "123", "abc", "sdf", "adasd", "bdfsd", "z", "abc" };
+		SortingMethod s = new SortingMethod();
+		String[] result = s.BubbleSort(input);
+
 		// testing
-		for (int i = 0; i < input.length; i++)
-			System.out.println(input[i]);
+
+		for (int i = 0; i < result.length; i++)
+			System.out.println(result[i]);
+
 	}
 
 }
